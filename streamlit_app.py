@@ -2,6 +2,25 @@ import streamlit as st
 
 
 def main():
+    upload()  # The upload functionality will be shown first
+    chat_bot()  # Then, the chat bot will be displayed below
+
+
+def upload():
+    st.title("Upload Documents")
+
+    jd_file = st.file_uploader("Upload a JD", type=["pdf"])
+    cv_file = st.file_uploader("Upload your CV", type=["pdf"])
+
+    if jd_file:
+        st.write("You've uploaded Document 1!")
+    if cv_file:
+        st.write("You've uploaded Document 2!")
+
+    st.write("---")  # Add a separator between sections
+
+
+def chat_bot():
     st.title("Echo Bot")
 
     # Initialize chat history
